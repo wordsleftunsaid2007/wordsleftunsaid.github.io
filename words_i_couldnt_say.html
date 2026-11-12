@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="A quiet place for words that are hard to say.">
+<title>Words I Couldn't Say</title>
+<style>
+:root{color-scheme:dark;--bg:#101014;--panel:#19191f;--muted:#aaa7b2;--text:#f4f0f5;--accent:#c6a6b7;--line:#302d35}*{box-sizing:border-box}body{margin:0;background:radial-gradient(ellipse at 50% -20%,#302432 0%,transparent 55%),var(--bg);color:var(--text);font:16px/1.65 Georgia,serif}header{padding:72px 20px 48px;text-align:center;border-bottom:1px solid var(--line)}.eyebrow{font:11px Arial,sans-serif;letter-spacing:.28em;text-transform:uppercase;color:var(--accent)}h1{font-size:clamp(36px,7vw,64px);font-weight:400;letter-spacing:-.04em;margin:16px 0 8px}.subtitle{color:var(--muted);font-style:italic;margin:0}main{width:min(760px,calc(100% - 32px));margin:42px auto 80px}.intro{color:var(--muted);text-align:center;margin:0 auto 38px;max-width:520px}.verse{background:linear-gradient(145deg,#1d1b22,#17171c);border:1px solid var(--line);border-radius:16px;padding:28px clamp(20px,5vw,42px);margin:22px 0;box-shadow:0 16px 45px #0003}.verse h2{font-size:25px;font-weight:400;margin:0 0 20px;color:#f4eaf1}.poem{white-space:pre-line;color:#e4dfe5;line-height:1.9}.meta{font:11px Arial,sans-serif;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin-top:24px}.composer{margin-top:48px;padding:26px;background:var(--panel);border:1px solid var(--line);border-radius:16px}.composer h2{font-weight:400;margin:0 0 8px}.note{font:13px/1.5 Arial,sans-serif;color:var(--muted);margin:0 0 18px}label{display:block;font:12px Arial,sans-serif;color:var(--accent);margin:14px 0 7px}input,textarea{width:100%;padding:12px 13px;background:#111116;border:1px solid #3a3540;border-radius:9px;color:var(--text);font:15px Georgia,serif}textarea{min-height:190px;resize:vertical;line-height:1.6}button{margin-top:15px;border:0;border-radius:999px;background:var(--accent);color:#171219;padding:11px 20px;font:600 13px Arial,sans-serif;cursor:pointer}button:hover{filter:brightness(1.08)}.status{font:12px Arial,sans-serif;color:var(--muted);min-height:18px;margin-top:10px}footer{text-align:center;border-top:1px solid var(--line);padding:24px;color:var(--muted);font:12px Arial,sans-serif}@media(max-width:520px){header{padding-top:54px}.verse{padding:22px 18px}}
+</style></head>
+<body>
+<header><div class="eyebrow">A collection of thoughts</div><h1>Words I Couldn't Say</h1><p class="subtitle">Some feelings find their way onto a page.</p></header>
+<main><p class="intro">A quiet place for verses about love, loss, regret, hope, and everything in between.</p>
+<article class="verse"><h2>If Only I Knew</h2><div class="poem">I still go to the places where we used to laugh and love
+I wish I could change the things that hurt you most
+But seeing my mistakes came too late
+
+I lost my second half, my everything
+Even the little things don't feel right anymore
+The things I used to do
+The feeling of finally getting to see you
+
+I miss the smile that warmed my heart
+The one that made me feel safe from the start
+The smile I'd give everything to see once more
+Even knowing I'm the one who closed that door
+
+Your voice was where I felt at home
+The only place I'd never feel alone
+You made my darkest days feel bright
+And gave me dreams of a future in sight
+
+You were never meant to be a prisoner, but a prize
+A beautiful soul with your own dreams and life
+I should've loved you without trying to control
+Forgot you were your own person, with a heart and soul
+
+I know I was wrong and I'll never deny
+My past made it harder but that's no reason why
+You should've had to carry the pain that I caused
+You deserved to feel loved, not trapped by my flaws
+
+If I'd understood back then what I understand today
+Maybe things would've gone another way
+Maybe we'd still be laughing, maybe we'd still be in love
+Instead of missing everything we once dreamed of
+
+Part of me is still waiting, hoping you'll return
+The other knows your choice is final, though my heart still burns
+I can't decide the path that you choose to take
+Even if accepting it is more than I can take
+
+I still wish you'd be there when my future unfolds
+But deep down I know some stories can't be retold
+I'll always wish for what we could've been
+Even if our paths never cross again
+
+I should've stood beside you, not stood in your way
+Let you chase your dreams and never make you stay
+Trust your heart and let you be free
+And love the person you were meant to be
+
+I'll carry what you taught me wherever I go
+And become someone I should've been long ago
+I'll always wish our story had another end
+But I won't let my mistakes define who I am
+
+I'll always wish you happiness wherever you go
+And a part of me will love you more than you'll know
+I'll be grateful for the time we got to share
+Even if I can no longer be the one who's there</div><div class="meta">Verse 01 · Love · Regret · Letting go</div></article>
+<section class="composer"><h2>Add another verse</h2><p class="note">Write a new piece and save it as a draft on this device. Drafts are private to this browser and are not published publicly.</p><label for="title">Title</label><input id="title" maxlength="70" placeholder="Give your verse a title"><label for="body">Your verse</label><textarea id="body" placeholder="Write it here..."></textarea><button id="save">Save draft on this device</button><div class="status" id="status" aria-live="polite"></div></section></main>
+<footer>Words I Couldn't Say · Written with feeling, shared with care</footer>
+<script>const title=document.getElementById('title'),body=document.getElementById('body'),status=document.getElementById('status');document.getElementById('save').addEventListener('click',()=>{const t=title.value.trim(),b=body.value.trim();if(!t||!b){status.textContent='Add a title and some words first.';return}try{const drafts=JSON.parse(localStorage.getItem('wordsICouldntSayDrafts')||'[]');drafts.push({title:t,body:b,savedAt:new Date().toISOString()});localStorage.setItem('wordsICouldntSayDrafts',JSON.stringify(drafts));status.textContent='Draft saved on this device. It is not public yet.';title.value='';body.value=''}catch(e){status.textContent='Could not save this draft in your browser.'}});</script>
+</body></html>
